@@ -1,5 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './logo.svg';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { StockOverviewPage } from './Pages/StockOverviewPage';
+import {StockDetailPage} from './Pages/StockDetailPage'
 import './App.css';
 
 
@@ -7,9 +10,15 @@ import './App.css';
 function App() {
   
   return (
-    
-    
-    <h2 className="mt-5">Hello</h2>
+
+    <main>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<StockOverviewPage/>}/> 
+        <Route path="/detail/:symbol" element={<StockDetailPage/>}/> 
+      </Routes>
+      </BrowserRouter>
+    </main>
   );
 }
 
